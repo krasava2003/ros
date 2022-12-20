@@ -28,7 +28,7 @@ def parseCommit(text, file_name, commitsNames):
     return commit
 def gitType(filePath, path):
     path = os.path.normpath(path)
-    gitPath = ".git\objects"
+    gitPath = ".git\\objects"
     gitPath = os.path.normpath(gitPath)
     gitPath = os.path.join(path, gitPath, filePath[0:2], filePath[2:])
     return getText(gitPath).split()[0].decode("utf-8")
@@ -125,7 +125,7 @@ def getNodes(commits, trees):
 
 
 def getCommits(path):
-    gitPath = ".git\objects"
+    gitPath = ".git\\objects"
     gitPath = os.path.join(os.path.normpath(path), os.path.normpath(gitPath)) # Конкатенируем пути
     gitPath = os.walk(gitPath)
 
